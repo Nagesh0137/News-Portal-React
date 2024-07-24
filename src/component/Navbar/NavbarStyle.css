@@ -1,0 +1,25 @@
+.fab {
+  color: white;
+}
+
+.menu a {
+  text-decoration: none;
+  color: rgb(247, 247, 247);
+  padding: 10px;
+  margin-left: 5px;
+  font-size: 18px;
+}
+.menu a:hover {
+  color: rgb(241, 241, 241);
+  background-color: rgb(231, 103, 40);
+}
+.badge {
+  background-color: rgb(231, 103, 40);
+  color: white;
+}
+.badge:hover {
+  color: white;
+}
+.nav-link {
+  color: #fff !important;
+}
