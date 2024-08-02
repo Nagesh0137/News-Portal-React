@@ -2,40 +2,49 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./HomeStyle.css";
-// import $ from "jquery";
+import $ from "jquery";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+import "owl.carousel";
+
+window.jQuery = $;
+window.$ = $;
 
 export default function Home() {
   useEffect(() => {
     AOS.init();
-  });
-  // web stories
+  }, []);
+
   useEffect(() => {
     $(document).ready(function () {
-      $(".owl-carousel").owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        dots: false,
-        autoplay: true,
-        autoplayTimeout: 2000,
-        autoplayHoverPause: true,
-        responsive: {
-          0: {
-            items: 1,
+      if ($(".owl-carousel").length) {
+        $(".owl-carousel").owlCarousel({
+          loop: true,
+          margin: 10,
+          nav: true,
+          dots: false,
+          autoplay: true,
+          autoplayTimeout: 2000,
+          autoplayHoverPause: true,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 3,
+            },
+            1000: {
+              items: 5,
+            },
           },
-          600: {
-            items: 3,
-          },
-          1000: {
-            items: 5,
-          },
-        },
-      });
+        });
+      }
     });
   }, []);
+
   useEffect(() => {
-    var tickerLength = $(".carousel-inner-data ul li").length;
-    var tickerHeight = $(".carousel-inner-data ul li").outerHeight();
+    const tickerLength = $(".carousel-inner-data ul li").length;
+    const tickerHeight = $(".carousel-inner-data ul li").outerHeight();
     $(".carousel-inner-data ul li:last-child").prependTo(
       ".carousel-inner-data ul"
     );
