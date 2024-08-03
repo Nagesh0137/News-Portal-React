@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import $ from "jquery";
 
 export default function MainSlider() {
   useEffect(() => {
