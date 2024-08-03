@@ -86,7 +86,7 @@ const Topbar = () => {
       <div className="row align-items-center bg-white px-lg-5">
         <div className="col-lg-4">
           <img
-            src="/img/logo.jpeg"
+            src={`${process.env.PUBLIC_URL}/img/logo.jpeg`}
             style={{ height: "100px", width: "250px" }}
             alt="Logo"
           />
@@ -108,12 +108,14 @@ const MenuBar = () => (
         type="button"
         className="navbar-toggler"
         data-toggle="collapse"
-        data-target="#navbarCollapse">
+        data-target="#navbarCollapse"
+      >
         <span className="navbar-toggler-icon"></span>
       </button>
       <div
         className="collapse navbar-collapse justify-content-between px-0 px-lg-3"
-        id="navbarCollapse">
+        id="navbarCollapse"
+      >
         <div className="navbar-nav mr-auto py-0 menu">
           <a
             href="/"
@@ -121,7 +123,8 @@ const MenuBar = () => (
             style={{
               color: "rgb(241, 241, 241)",
               backgroundColor: "rgb(231,103,40)",
-            }}>
+            }}
+          >
             मुखपृष्ठ
           </a>
           <a href="/maharashtra" className="nav-item">
