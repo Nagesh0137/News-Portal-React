@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Nagesh0137/News-Portal-React.git/static/css/main.b5a28ebe.css",
-    "main.js": "/Nagesh0137/News-Portal-React.git/static/js/main.14391e5c.js",
+    "main.css": "/Nagesh0137/News-Portal-React.git/static/css/main.07c1f08e.css",
+    "main.js": "/Nagesh0137/News-Portal-React.git/static/js/main.25c6bf5a.js",
     "static/js/453.beda846c.chunk.js": "/Nagesh0137/News-Portal-React.git/static/js/453.beda846c.chunk.js",
     "index.html": "/Nagesh0137/News-Portal-React.git/index.html",
-    "main.b5a28ebe.css.map": "/Nagesh0137/News-Portal-React.git/static/css/main.b5a28ebe.css.map",
-    "main.14391e5c.js.map": "/Nagesh0137/News-Portal-React.git/static/js/main.14391e5c.js.map",
+    "main.07c1f08e.css.map": "/Nagesh0137/News-Portal-React.git/static/css/main.07c1f08e.css.map",
+    "main.25c6bf5a.js.map": "/Nagesh0137/News-Portal-React.git/static/js/main.25c6bf5a.js.map",
     "453.beda846c.chunk.js.map": "/Nagesh0137/News-Portal-React.git/static/js/453.beda846c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b5a28ebe.css",
-    "static/js/main.14391e5c.js"
+    "static/css/main.07c1f08e.css",
+    "static/js/main.25c6bf5a.js"
   ]
 }
