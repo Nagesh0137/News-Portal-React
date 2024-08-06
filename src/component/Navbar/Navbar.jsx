@@ -10,6 +10,7 @@ import {
   faGooglePlusG,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { NavLink } from "react-router-dom";
 
 const Topbar = () => {
   const currentDate = new Date();
@@ -117,37 +118,30 @@ const MenuBar = () => (
         id="navbarCollapse"
       >
         <div className="navbar-nav mr-auto py-0 menu">
-          <a
-            href="/"
-            className="nav-item active"
-            style={{
-              color: "rgb(241, 241, 241)",
-              backgroundColor: "rgb(231,103,40)",
-            }}
-          >
-            मुखपृष्ठ
-          </a>
-          <a href="/maharashtra" className="nav-item">
-            महाराष्ट्र
-          </a>
-          <a href="/krida" className="nav-item">
-            क्रीडा
-          </a>
-          <a href="/lifestyle" className="nav-item">
-            लाइफस्टाईल
-          </a>
-          <a href="/entertainment" className="nav-item">
-            मनोरंजन
-          </a>
-          <a href="/education" className="nav-item">
-            शिक्षण
-          </a>
-          <a href="/stock_market" className="nav-item">
-            शेअर बाजार
-          </a>
-          <a href="/weather" className="nav-item">
-            हवामान
-          </a>
+          <NavLink to="/" className="nav-item">
+            Home
+          </NavLink>
+          <NavLink to="/maharashtra" className="nav-item">
+            Maharashtra
+          </NavLink>
+          <NavLink to="/sport" className="nav-item">
+            Sport
+          </NavLink>
+          <NavLink to="/lifestyle" className="nav-item">
+            Life Style
+          </NavLink>
+          <NavLink to="/entertainment" className="nav-item">
+            Entertainment
+          </NavLink>
+          <NavLink to="/education" className="nav-item">
+            Education
+          </NavLink>
+          <NavLink to="/stock_market" className="nav-item">
+            Stock Market
+          </NavLink>
+          <NavLink to="/weather" className="nav-item">
+            Weather
+          </NavLink>
         </div>
       </div>
     </nav>
