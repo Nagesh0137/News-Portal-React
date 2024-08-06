@@ -1,0 +1,208 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+footer {
+    background-color: rgb(26, 26, 26);
+    color: white;
+    padding: 40px;
+}
+.subcribe{
+    background-color: rgb(26, 26, 26);
+    color: white;
+
+}
+
+.f-1 h5 {
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+.f-1 ul {
+    list-style-type: none;
+    display: flex;
+    padding-left: 0;
+}
+
+.f-1 ul li {
+    margin: 10px;
+    font-size: 25px;
+}
+
+.f-1 ul li:nth-child(1) i {
+    color: rgb(82, 170, 244) !important;
+}
+
+.f-1 ul li:nth-child(2) i {
+    color: rgb(217, 45, 108);
+}
+
+.f-1 ul li:nth-child(3) i {
+    color: rgb(21, 88, 214);
+}
+
+.f-1 ul li:nth-child(4) i {
+    color: rgb(208, 0, 0);
+}
+
+.f-1 ul li:nth-child(5) i {
+    color: rgb(61, 145, 46);
+}
+
+.f-1 ul li:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    border-bottom: 1px solid white;
+    
+}
+
+h6 {
+    font-size: 18px;
+    padding-top: 30px;
+}
+
+.f-2 h5 a {
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #ff720d;
+    padding: 3px;
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+}
+
+.f-2 p {
+    font-size: 16px;
+    color: rgb(157, 157, 157);
+}
+
+.f-3 ul {
+    list-style-type: none;
+    margin-left: -15px;
+    padding-left: 0;
+}
+
+.f-3 ul li a {
+    color: rgb(249, 249, 249);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.f-3 ul li i {
+    padding-right: 5px;
+    font-size: 16px;
+    color: #ff720d;
+}
+
+.f-3 ul li a:hover {
+    text-decoration: underline;
+}
+
+.f-3 ul li:hover {
+    transform: scaleX(1.1);
+}
+
+.f-4 p {
+    font-size: 18px;
+    color: rgb(144, 144, 144);
+}
+
+.f-4 input {
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+    padding: 3px;
+}
+
+.f-4 button {
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    margin-left: 0px;
+    padding: 3px;
+    padding-left: 5px;
+    color: white;
+    background-color: #ff720d;
+    font-weight: bold;
+}
+
+.f-4 ul {
+    list-style-type: none;
+    display: flex;
+    margin-left: -13px;
+    margin-top: 10px;
+    color: rgb(254, 254, 254);
+    padding-left: 0;
+}
+
+.f-4 ul li {
+    padding: 10px;
+    font-size: 16px
+}
+
+.f-4 ul li i {
+    padding-right: 5px;
+}
+
+.f-nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-left: 0;
+}
+
+.f-nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@keyframes nav {
+    0% {
+        border-bottom: 1px solid #181818;
+    }
+
+    100% {
+        border-bottom: 2px solid #ff720d;
+        transform: translateX(1.1);
+    }
+}
+
+.f-nav ul li:hover {
+    animation: nav 0.4s ease-in-out forwards;
+}
+
+.copyright p {
+    font-size: 15px;
+    text-align: center;
+    background-color: #3f3e3e;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+
+/* subcribe btn */
+
+
+.form-control{
+    height:50px;
+    border:2px solid #eee;   
+}
+
+.form-control:focus{
+    box-shadow:none;
+    border:2px solid #dc3545;
+    
+}
+
+.btn-danger{
+    height:50px;
+    font-size:11px;
+}
+
+/* nav-link-active */
+
+.nav-link-active{
+    text-decoration: underline;
+}

@@ -5,6 +5,8 @@ import "./HomeStyle.css";
 import SliderNews from "./SliderNews";
 import MainSlider from "./MainSlider";
 import WebStories from "./WebStories";
+import LatestNews from "./LatestNews";
+import TrendingNews from "./TrendingNews";
 
 export default function Home() {
   useEffect(() => {
@@ -19,6 +21,8 @@ export default function Home() {
           <div className="row">
             <MainSlider></MainSlider>
             <WebStories></WebStories>
+            <LatestNews></LatestNews>
+            <TrendingNews></TrendingNews>
           </div>
         </div>
       </main>

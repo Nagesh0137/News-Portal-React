@@ -8,7 +8,7 @@ export default function SliderNews() {
           <div className="row">
             <div className="col-12 p-0">
               <div className="ticker bg-white">
-                <div className="title bg-org">
+                <div className="title bg-org overflow-hidden">
                   <h5 className="text-white fw-bolder fs-4 m-0 h-100 p-0">
                     Breaking News
                   </h5>
