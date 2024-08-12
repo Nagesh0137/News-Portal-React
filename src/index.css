@@ -33,6 +33,16 @@ a {
   color: #fff;
   text-decoration: none;
 }
+.underline-hover:hover{
+  text-decoration: underline !important;
+  cursor: pointer !important;
+  color: rgb(0, 174, 255) ;
+}
+.badge:hover{
+  text-decoration: underline !important;
+  cursor: pointer !important;
+  
+}
 
 .ticker {
   display: flex;

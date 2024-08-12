@@ -3,7 +3,9 @@ import Carousel from "react-owl-carousel2";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./HomeStyle.css";
-export default function WebStories() {
+import { Link } from "react-router-dom";
+export default function WebStories({ storySize }) {
+  let size = Number(storySize);
   const options = {
     loop: true,
     margin: 10,
@@ -18,11 +20,8 @@ export default function WebStories() {
       0: {
         items: 1,
       },
-      600: {
-        items: 3,
-      },
-      1000: {
-        items: 5,
+      100: {
+        items: size ? 1 : 5,
       },
     },
   };
@@ -44,7 +43,7 @@ export default function WebStories() {
           <div className="col-12">
             <Carousel options={options} className="owl-carousel mt-5 owl-theme">
               {Array.from({ length: 10 }).map((_, index) => (
-                <a href="webstories.html" key={index}>
+                <Link to="/web_stories" key={index}>
                   <div
                     className="item"
                     data-aos="flip-left"
@@ -71,7 +70,7 @@ export default function WebStories() {
                       </h3>
                     </div>
                   </div>
-                </a>
+                </Link>
               ))}
             </Carousel>
           </div>

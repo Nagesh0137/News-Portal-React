@@ -17,6 +17,7 @@ export default function Home() {
     <>
       <main>
         <SliderNews></SliderNews>
+
         <div className="container-fluid overflow-hidden">
           <div className="row">
             <MainSlider></MainSlider>

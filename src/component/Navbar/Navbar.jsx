@@ -142,6 +142,9 @@ const MenuBar = () => (
           <NavLink to="/weather" className="nav-item">
             Weather
           </NavLink>
+          <NavLink to="/web_stories" className="nav-item">
+            web stories
+          </NavLink>
         </div>
       </div>
     </nav>
