@@ -1,0 +1,65 @@
+
+        .group-card {
+            margin-bottom: 20px;
+            position: relative;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            background: #f0f8ff;
+            display: flex;
+            align-items: center;
+            padding: 7px;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        .whatsapp-card {
+            animation: whatsapp-border-animation 1s infinite;
+        }
+        .telegram-card {
+            animation: telegram-border-animation 1s infinite;
+        }
+        .instagram-card {
+            animation: instagram-border-animation 1s infinite;
+        }
+        @keyframes whatsapp-border-animation {
+            0% { border-color: transparent; }
+            50% { border-color: #25d366; }
+            100% { border-color: transparent; }
+        }
+        @keyframes telegram-border-animation {
+            0% { border-color: transparent; }
+            50% { border-color: #004F7A; }
+            100% { border-color: transparent; }
+        }
+        @keyframes instagram-border-animation {
+            0% { border-color: transparent; }
+            50% { border-color: #E1306C; }
+            100% { border-color: transparent; }
+        }
+        .seoquake-nofollow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 5px 20px;
+            border-radius: 2px;
+            flex-shrink: 0;
+            transition: all 0.3s ease-in-out;
+            color: white !important;
+        }
+        .seoquake-nofollow i {
+            margin-right: 5px;
+        }
+        .whatsapp-card .seoquake-nofollow {
+            background: #25d366;
+        }
+        .telegram-card .seoquake-nofollow {
+            background: #004F7A;
+        }
+        .instagram-card .seoquake-nofollow {
+            background: #E1306C;
+        }
+        .seoquake-nofollow:hover {
+            transform: scale(1.05);
+        }

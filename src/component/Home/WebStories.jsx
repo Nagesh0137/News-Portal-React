@@ -33,7 +33,7 @@ export default function WebStories({ storySize }) {
           <div className="col-12">
             <div
               data-aos="fade-up"
-              className="d-flex web-story shadow-lg align-items-center overflow-hidden"
+              className="d-flex web-story shadow-lg bg-white align-items-center overflow-hidden"
             >
               <h3 className="ms-5 fw-bold pt-2">
                 LATEST <span className="text-green">WEB STORIES</span>
@@ -54,6 +54,7 @@ export default function WebStories({ storySize }) {
                       src={`https://picsum.photos/800/600?random=${index + 1}`}
                       alt={`Random Image ${index + 1}`}
                       className="img-fluid img-thumbnail"
+                      style={{ objectFit: "cover" }}
                     />
                     <div className="carousel-caption d-md-block m-0 p-0">
                       <span className="badge bg-success mb-3 p-2 text-white">

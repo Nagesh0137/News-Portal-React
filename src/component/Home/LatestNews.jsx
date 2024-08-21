@@ -1,4 +1,5 @@
 import React from "react";
+import ReadMoreBTN from "../Read more btn/ReadMoreBTN";
 
 const LatestNews = () => {
   return (
@@ -51,12 +52,7 @@ const LatestNews = () => {
                   आहे. जमिनीमध्ये चांगली ओल निर्माण झाली असून खरिप हंगामातील
                   पेरण्यांना वेग आला आहे.
                 </p>
-                <button
-                  type="button"
-                  className="btn btn-outline-danger fw-bold mt-2 button"
-                >
-                  Read More
-                </button>
+                <ReadMoreBTN />
               </div>
             </div>
           </div>
@@ -96,12 +92,7 @@ const LatestNews = () => {
                   आहे. जमिनीमध्ये चांगली ओल निर्माण झाली असून खरिप हंगामातील
                   पेरण्यांना वेग आला आहे.
                 </p>
-                <button
-                  type="button"
-                  className="btn btn-outline-danger fw-bold mt-2 button"
-                >
-                  Read More
-                </button>
+                <ReadMoreBTN />
               </div>
             </div>
           </div>
@@ -141,12 +132,7 @@ const LatestNews = () => {
                   आहे. जमिनीमध्ये चांगली ओल निर्माण झाली असून खरिप हंगामातील
                   पेरण्यांना वेग आला आहे.
                 </p>
-                <button
-                  type="button"
-                  className="btn btn-outline-danger fw-bold mt-2 button"
-                >
-                  Read More
-                </button>
+                <ReadMoreBTN />
               </div>
             </div>
           </div>

@@ -5,11 +5,11 @@ export default function RightSidebar() {
   return (
     <>
       <div className="row">
-        <div className="col-12">
+        <div className="col-12" data-aos="zoom-out">
           <div className="mb-3 w-100">
             <div
-              className="section-title w-100 d-flex align-items-center follow-us-title mb-0"
-              style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+              className="section-title shadow bg-white w-100 d-flex align-items-center follow-us-title mb-0"
+              style={{}}
             >
               <h3 className="ms-5 fw-bold pt-2">
                 FOLLOW <span className="text-green">US</span>
@@ -17,10 +17,10 @@ export default function RightSidebar() {
             </div>
           </div>
         </div>
-        <div className="col-12">
+        <div className="col-12" data-aos="zoom-out">
           <div
-            className="bg-white border border-top-0 p-3 mb-3"
-            style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+            className="bg-white border shadow border-top-0 p-3 mb-3"
+            style={{}}
           >
             {[
               {
@@ -68,11 +68,11 @@ export default function RightSidebar() {
           </div>
         </div>
         {/* trending News */}
-        <div className="col-12">
+        <div className="col-12" data-aos="zoom-out">
           <div className="mb-3 w-100">
             <div
-              className="section-title w-100 d-flex align-items-center follow-us-title mb-0"
-              style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+              className="section-title shadow bg-white w-100 d-flex align-items-center follow-us-title mb-0"
+              style={{}}
             >
               <h3 className="ms-4 fw-bold pt-2">
                 Trending<span className="text-green"> News</span>
@@ -84,7 +84,7 @@ export default function RightSidebar() {
           <div className="mb-3 w-100">
             <div
               className="card rounded-0 mb-3 shadow bg-white"
-              data-aos="fade-up-left"
+              data-aos="zoom-out"
               style={{ maxWidth: "100%" }}
             >
               <div className="row g-0">
@@ -118,13 +118,13 @@ export default function RightSidebar() {
           <div className="mb-3 w-100">
             <div
               className="card rounded-0 mb-3 shadow bg-white"
-              data-aos="fade-up-left"
+              data-aos="zoom-out"
               style={{ maxWidth: "100%" }}
             >
               <div className="row g-0">
                 <div className="col-md-4">
                   <img
-                    src="https://picsum.photos/800/604"
+                    src="https://picsum.photos/800/603"
                     className="img-fluid h-100 "
                     alt="..."
                   />
@@ -152,13 +152,13 @@ export default function RightSidebar() {
           <div className="mb-3 w-100">
             <div
               className="card rounded-0 mb-3 shadow bg-white"
-              data-aos="fade-up-left"
+              data-aos="zoom-out"
               style={{ maxWidth: "100%" }}
             >
               <div className="row g-0">
                 <div className="col-md-4">
                   <img
-                    src="https://picsum.photos/800/604"
+                    src="https://picsum.photos/800/605"
                     className="img-fluid h-100 "
                     alt="..."
                   />

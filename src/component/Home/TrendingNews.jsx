@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ReadMoreBTN from "../Read more btn/ReadMoreBTN";
 
 const TrendingNews = () => {
   useEffect(() => {
@@ -51,12 +52,7 @@ const TrendingNews = () => {
                       आनंदात आहे. जमिनीमध्ये चांगली ओल निर्माण झाली असून खरिप
                       हंगामातील पेरण्यांना वेग आला आहे.
                     </p>
-                    <button
-                      type="button"
-                      className="btn btn-outline-primary button"
-                    >
-                      Read More
-                    </button>
+                    <ReadMoreBTN />
                   </div>
                 </div>
               </div>
@@ -91,12 +87,7 @@ const TrendingNews = () => {
                       राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी राजा
                       आनंदात आहे.
                     </p>
-                    <button
-                      type="button"
-                      className="btn btn-outline-primary mx-auto button"
-                    >
-                      Read More
-                    </button>
+                    <ReadMoreBTN />
                   </div>
                 </div>
               </div>
@@ -131,12 +122,7 @@ const TrendingNews = () => {
                       राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी राजा
                       आनंदात आहे.
                     </p>
-                    <button
-                      type="button"
-                      className="btn btn-outline-primary mx-auto p-1 button"
-                    >
-                      Read More
-                    </button>
+                    <ReadMoreBTN />
                   </div>
                 </div>
               </div>
@@ -171,12 +157,7 @@ const TrendingNews = () => {
                       राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी राजा
                       आनंदात आहे.
                     </p>
-                    <button
-                      type="button"
-                      className="btn btn-outline-primary button"
-                    >
-                      Read More
-                    </button>
+                    <ReadMoreBTN />
                   </div>
                 </div>
               </div>
@@ -211,12 +192,7 @@ const TrendingNews = () => {
                       राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी राजा
                       आनंदात आहे.
                     </p>
-                    <button
-                      type="button"
-                      className="btn btn-outline-primary button"
-                    >
-                      Read More
-                    </button>
+                    <ReadMoreBTN />
                   </div>
                 </div>
               </div>

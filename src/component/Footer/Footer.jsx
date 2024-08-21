@@ -126,7 +126,7 @@ const Footer = () => {
           <br />
           <ul className="ps-3">
             <li>
-              <i className="fa fa-phone"></i>+915125213
+              <i className="fa fa-phone"></i>+919867453267
             </li>
             <li>
               <i className="fa fa-envelope"></i>abc@gmail.com

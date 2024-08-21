@@ -5,7 +5,7 @@ import TrendingNews from "../Home/TrendingNews";
 import PaginatedCards from "./CardPagination";
 import RelatedPost from "./RelatedPost";
 import RightSidebar from "./RightSidebar";
-export default function Maharastra() {
+export default function Category() {
   const headtitle =
     "मान्सून'ने महाराष्ट्र सुखावला, नाशिक-जळगाव जिल्ह्यात मुसळधार पाऊस, पेरण्यांना आला वेग";
   const paragraphtitle = `राजा आनंदात आहे. जमिनीमध्ये चांगली ओल निर्माण झाली असून खरिप हंगामातील पेरण्यांना वेग आला आहे`;
@@ -24,7 +24,10 @@ export default function Maharastra() {
               <b className="text-primary">Home</b>
               <small className="">-Maharashtra</small>
             </div>
-            <div className="h-100 category-head d-flex align-items-center justify-content-center">
+            <div
+              data-aos="fade-up"
+              className="h-100 category-head d-flex align-items-center justify-content-center"
+            >
               <h1 className="text-center fw-bold text-white z-1">Maharastra</h1>
             </div>
           </div>
@@ -43,9 +46,9 @@ export default function Maharastra() {
                     ></PaginatedCards>
 
                     {/* horizontal news */}
-                    <div className="col-12">
+                    <div data-aos="zoom-out" className="col-12">
                       <div
-                        className="card mt-4 mb-3 shadow"
+                        className="card mt-4 mb-3 rounded-0 shadow"
                         data-aos="fade-down-left"
                         style={{ maxWidth: "100%" }}
                       >
@@ -58,7 +61,7 @@ export default function Maharastra() {
                                 height: "100%",
                               }}
                               src="https://picsum.photos/800/600"
-                              className="img-fluid rounded-start"
+                              className="img-fluid rounded-0"
                               alt="..."
                             />
                           </div>
@@ -91,9 +94,9 @@ export default function Maharastra() {
                       </div>
                     </div>
                     {/* First Horizontal card */}
-                    <div className="col-6 col-md-6">
+                    <div data-aos="zoom-out" className="col-6 col-md-6">
                       <div
-                        className="card mb-3 shadow"
+                        className="card rounded-0 mb-3 shadow"
                         data-aos="fade-up-left"
                         style={{ maxWidth: "100%" }}
                       >
@@ -106,7 +109,7 @@ export default function Maharastra() {
                                 height: "100%",
                               }}
                               src="https://picsum.photos/800/604"
-                              className="img-fluid h-100 rounded-start"
+                              className="img-fluid h-100 rounded-0"
                               alt="..."
                             />
                           </div>
@@ -132,9 +135,9 @@ export default function Maharastra() {
                       </div>
                     </div>
                     {/* Second Horizontal card */}
-                    <div className="col-6 col-md-6">
+                    <div data-aos="zoom-out" className="col-6 col-md-6">
                       <div
-                        className="card mb-3 shadow"
+                        className="card mb-3 rounded-0 shadow"
                         data-aos="fade-up"
                         style={{ maxWidth: "100%" }}
                       >
@@ -147,7 +150,7 @@ export default function Maharastra() {
                                 height: "100%",
                               }}
                               src="https://picsum.photos/800/603"
-                              className="img-fluid h-100 rounded-start"
+                              className="img-fluid h-100 rounded-0"
                               alt="..."
                             />
                           </div>
@@ -173,9 +176,9 @@ export default function Maharastra() {
                       </div>
                     </div>
                     {/* Third Horizontal card */}
-                    <div className="col-12 col-md-6">
+                    <div data-aos="zoom-out" className="col-12 col-md-6">
                       <div
-                        className="card mb-3 shadow"
+                        className="card mb-3 rounded-0 shadow"
                         data-aos="fade-up-right"
                         style={{ maxWidth: "100%" }}
                       >
@@ -188,7 +191,7 @@ export default function Maharastra() {
                                 height: "100%",
                               }}
                               src="https://picsum.photos/800/602"
-                              className="img-fluid d-none d-md-block h-100 rounded-start"
+                              className="img-fluid d-none d-md-block h-100 rounded-0"
                               alt="..."
                             />
                           </div>
@@ -214,9 +217,9 @@ export default function Maharastra() {
                       </div>
                     </div>
                     {/* Fourth Horizontal card */}
-                    <div className="col-12 col-md-6">
+                    <div data-aos="zoom-out" className="col-12 col-md-6">
                       <div
-                        className="card mb-3 shadow"
+                        className="card mb-3 rounded-0 shadow"
                         data-aos="fade-up"
                         style={{ maxWidth: "100%" }}
                       >
@@ -229,7 +232,7 @@ export default function Maharastra() {
                                 height: "100%",
                               }}
                               src="https://picsum.photos/800/601"
-                              className="img-fluid d-none d-md-block h-100 rounded-start"
+                              className="img-fluid d-none d-md-block h-100 rounded-0"
                               alt="..."
                             />
                           </div>

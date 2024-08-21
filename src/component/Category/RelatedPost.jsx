@@ -5,7 +5,7 @@ export default function RelatedPost({ paralimitedText, headlimitedText }) {
     <>
       <div
         data-aos="fade-up"
-        className="d-flex mt-2 web-story shadow-lg align-items-center overflow-hidden"
+        className="d-flex mt-2 web-story shadow bg-white align-items-center overflow-hidden"
       >
         <h3 className="ms-5 fw-bold pt-2">
           Related <span className="text-green">NEWS</span>
@@ -13,8 +13,8 @@ export default function RelatedPost({ paralimitedText, headlimitedText }) {
       </div>
       <section className="mb-4">
         <div className="row">
-          <div className="col-12 col-md-4 overflow-hidden">
-            <div className="card mt-4 mb-5  border shadow bg-transparent">
+          <div data-aos="zoom-out" className="col-12 col-md-4 overflow-hidden">
+            <div className="card mt-4 mb-3  border shadow bg-transparent">
               <img
                 src="https://picsum.photos/300/201"
                 className="card-img-top"
@@ -35,8 +35,8 @@ export default function RelatedPost({ paralimitedText, headlimitedText }) {
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-4 overflow-hidden">
-            <div className="card mt-4 mb-5  border shadow bg-transparent">
+          <div data-aos="zoom-out" className="col-12 col-md-4 overflow-hidden">
+            <div className="card mt-4 mb-3  border shadow bg-transparent">
               <img
                 src="https://picsum.photos/300/202"
                 className="card-img-top"
@@ -57,8 +57,8 @@ export default function RelatedPost({ paralimitedText, headlimitedText }) {
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-4 overflow-hidden">
-            <div className="card mt-4 mb-5  border shadow bg-transparent">
+          <div data-aos="zoom-out" className="col-12 col-md-4 overflow-hidden">
+            <div className="card mt-4 mb-3  border shadow bg-transparent">
               <img
                 src="https://picsum.photos/300/203"
                 className="card-img-top"

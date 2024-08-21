@@ -1,0 +1,55 @@
+{
+   
+    "articles": [
+      {
+        "category": "Breaking News",
+        "date": "2024-08-14T10:00:00Z",
+        "title": "Major Earthquake Hits City",
+        "details": "A powerful earthquake has struck the city, causing widespread damage and numerous casualties. Emergency services are working around the clock to provide assistance and assess the damage.",
+        "image": "https://example.com/images/earthquake.jpg"
+      },
+      {
+        "category": "Technology",
+        "date": "2024-08-14T09:30:00Z",
+        "title": "New AI Technology Revolutionizes Industry",
+        "details": "Recent advancements in artificial intelligence are set to revolutionize various industries. New AI models are improving efficiency and enabling new capabilities in automation and data analysis.",
+        "image": "https://example.com/images/ai-technology.jpg"
+      },
+      {
+        "category": "Economy",
+        "date": "2024-08-14T08:45:00Z",
+        "title": "Economic Growth Remains Steady Amidst Challenges",
+        "details": "Despite facing several economic challenges, growth remains steady. Analysts attribute this stability to strong consumer spending and a resilient job market.",
+        "image": "https://example.com/images/economy.jpg"
+      },
+      {
+        "category": "Climate",
+        "date": "2024-08-14T07:30:00Z",
+        "title": "Global Climate Summit Addresses Critical Issues",
+        "details": "World leaders have gathered for the global climate summit to address pressing environmental issues. Discussions focus on reducing carbon emissions and implementing sustainable practices.",
+        "image": "https://example.com/images/climate-summit.jpg"
+      },
+      {
+        "category": "Sports",
+        "date": "2024-08-14T06:00:00Z",
+        "title": "Exciting Results from the Weekend's Sports Events",
+        "details": "The weekend's sports events featured thrilling matches and impressive performances. Highlights include record-breaking performances and unexpected upsets.",
+        "image": "https://example.com/images/sports.jpg"
+      },
+      {
+        "category": "Health",
+        "date": "2024-08-14T05:15:00Z",
+        "title": "Tips for Maintaining Health During Summer",
+        "details": "With summer in full swing, it's important to stay healthy. Tips include staying hydrated, eating balanced meals, and incorporating exercise into your daily routine.",
+        "image": "https://example.com/images/health.jpg"
+      },
+      {
+        "category": "Entertainment",
+        "date": "2024-08-14T04:30:00Z",
+        "title": "Upcoming Blockbuster Movies to Watch",
+        "details": "Get ready for an exciting lineup of blockbuster movies set to release this year. From action-packed adventures to heartwarming dramas, there's something for everyone.",
+        "image": "https://example.com/images/movies.jpg"
+      }
+    ]
+  }
+  

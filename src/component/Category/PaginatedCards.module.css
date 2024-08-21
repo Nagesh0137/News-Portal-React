@@ -1,0 +1,45 @@
+/* PaginatedCards.module.css */
+
+/* General styles */
+
+  
+  .imgFluid {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .cardBody {
+      padding: 1rem;
+    }
+  
+    .cardTitle {
+      font-size: 1.25rem;
+    }
+  
+    .cardText {
+      font-size: 0.875rem;
+    }
+  
+    .paginationButton {
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .cardTitle {
+      font-size: 1rem;
+    }
+  
+    .cardText {
+      font-size: 0.75rem;
+    }
+  
+    .paginationButton {
+      font-size: 0.75rem;
+      padding: 0.375rem 0.75rem;
+    }
+  }
+  

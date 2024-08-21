@@ -148,10 +148,7 @@ export default function MainSlider() {
       <div className="col-12 col-md-5">
         <div className="row">
           <div className="col-12 m-0 p-0 col-md-6 bg-dark">
-            <div
-              className="row d-flex justify-content-center"
-              data-aos="fade-right"
-            >
+            <div className="row d-flex justify-content-center">
               <div className=" featcard rounded-0">
                 <div
                   id="featured"
@@ -236,10 +233,7 @@ export default function MainSlider() {
 
           {/* <!-- scrolling feed news --> */}
           <div className="col-12 p-0">
-            <div
-              className="sidebar-page-container h-100"
-              data-aos="fade-up-left"
-            >
+            <div className="sidebar-page-container h-100">
               <div className="sidebar">
                 <div className="sidebar-widget sidebar-post">
                   <div className="post-inner">

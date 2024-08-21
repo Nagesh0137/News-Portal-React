@@ -1,0 +1,67 @@
+.share-icons {
+    display: flex;
+    gap: 10px;
+    
+  }
+  
+  .share-icon {
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s;
+  }
+.share-icons .share-icon.facebook i {
+    color: #3b5998;
+  }
+  
+  .share-icons .share-icon.facebook i:hover {
+    color: #2d4373;
+  }
+  
+  .share-icons .share-icon.twitter i {
+    color: #1da1f2;
+  }
+  
+  .share-icons .share-icon.twitter i:hover {
+    color: #0d95e8;
+  }
+  
+  .share-icons .share-icon.linkedin i {
+    color: #0077b5;
+  }
+  
+  .share-icons .share-icon.linkedin i:hover {
+    color: #005582;
+  }
+  
+  .share-icons .share-icon.reddit i {
+    color: #ff4500;
+  }
+  
+  .share-icons .share-icon.reddit i:hover {
+    color: #cc3700;
+  }
+  
+  .share-icons .share-icon.instagram i {
+    color: #E4405F;
+  }
+  
+  .share-icons .share-icon.instagram i:hover {
+    color: #bc2a8d;
+  }
+  
+  .share-icons .share-icon.whatsapp i {
+    color: #25D366;
+  }
+  
+  .share-icons .share-icon.whatsapp i:hover {
+    color: #1ebd4c;
+  }
+  
+  .share-icons .share-icon.youtube i {
+    color: #FF0000;
+  }
+  
+  .share-icons .share-icon.youtube i:hover {
+    color: #cc0000;
+  }
+  

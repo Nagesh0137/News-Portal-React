@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useRef } from "react";
 
 export default function SliderNews() {
+  // Create a ref to access the marquee element
+  const marqueeRef = useRef(null);
+
+  const handleMouseOver = () => {
+    // Access the marquee element and stop it
+    if (marqueeRef.current) {
+      marqueeRef.current.stop();
+    }
+  };
+
+  const handleMouseOut = () => {
+    // Access the marquee element and start it
+    if (marqueeRef.current) {
+      marqueeRef.current.start();
+    }
+  };
+
   return (
     <>
       <header>
@@ -14,8 +31,13 @@ export default function SliderNews() {
                   </h5>
                 </div>
                 <div className="news bg-white">
-                  <marquee className="news-content fw-bold">
-                    <p className="">
+                  <marquee
+                    ref={marqueeRef} // Attach the ref to the marquee
+                    onMouseOver={handleMouseOver}
+                    onMouseOut={handleMouseOut}
+                    className="news-content fw-bold"
+                  >
+                    <p>
                       <i className="fa-solid fa-circle me-2 text-danger"></i>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
