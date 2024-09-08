@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/News-Portal-React/static/css/main.f14904be.css",
-    "main.js": "/News-Portal-React/static/js/main.f5b3cf53.js",
+    "main.css": "/News-Portal-React/static/css/main.8f5115eb.css",
+    "main.js": "/News-Portal-React/static/js/main.7af734e7.js",
     "static/js/453.beda846c.chunk.js": "/News-Portal-React/static/js/453.beda846c.chunk.js",
     "static/media/hero-bg.jpg": "/News-Portal-React/static/media/hero-bg.6de9c2d2a80ba7ccb815.jpg",
     "index.html": "/News-Portal-React/index.html",
-    "main.f14904be.css.map": "/News-Portal-React/static/css/main.f14904be.css.map",
-    "main.f5b3cf53.js.map": "/News-Portal-React/static/js/main.f5b3cf53.js.map",
+    "main.8f5115eb.css.map": "/News-Portal-React/static/css/main.8f5115eb.css.map",
+    "main.7af734e7.js.map": "/News-Portal-React/static/js/main.7af734e7.js.map",
     "453.beda846c.chunk.js.map": "/News-Portal-React/static/js/453.beda846c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f14904be.css",
-    "static/js/main.f5b3cf53.js"
+    "static/css/main.8f5115eb.css",
+    "static/js/main.7af734e7.js"
   ]
 }
