@@ -1,5 +1,6 @@
 import React from "react";
-
+import Articles from "../../Data";
+import { NavLink } from "react-router-dom";
 export default function RelatedPost({ paralimitedText, headlimitedText }) {
   return (
     <>
@@ -13,72 +14,32 @@ export default function RelatedPost({ paralimitedText, headlimitedText }) {
       </div>
       <section className="mb-4">
         <div className="row">
-          <div data-aos="zoom-out" className="col-12 col-md-4 overflow-hidden">
-            <div className="card mt-4 mb-3  border shadow bg-transparent">
-              <img
-                src="https://picsum.photos/300/201"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body p-2 ">
-                <p
-                  style={{ marginBottom: "0rem" }}
-                  className="card-text p-0 text-secondary underline-hover"
-                >
-                  {headlimitedText}
-                </p>
-                <small className="m-0">
-                  <i className="fa-solid fa-calendar-days me-1"></i>
-                  <small>Jun 12,2024</small>
-                  <strong className="ms-2">"life Style"</strong>
-                </small>
+          {Articles.slice(0, 3).map((article, index) => (
+            <div
+              key={index}
+              data-aos="zoom-out"
+              className="col-12 col-md-4 overflow-hidden"
+            >
+              <div className="card mt-4 mb-3 border shadow bg-transparent">
+                <img src={article.images} className="card-img-top" alt="..." />
+                <div className="card-body p-2">
+                  <p
+                    style={{ marginBottom: "0rem" }}
+                    className="card-text p-0 text-secondary underline-hover"
+                  >
+                    {article.headline.split(" ").slice(0, 7).join(" ") + ".."}
+                  </p>
+                  <small className="m-0">
+                    <i className="fa-solid fa-calendar-days me-1"></i>
+                    <small>{article.date}</small>
+                    <NavLink to={`/${article.category}`}>
+                      <strong className="ms-2">"{article.category}"</strong>
+                    </NavLink>
+                  </small>
+                </div>
               </div>
             </div>
-          </div>
-          <div data-aos="zoom-out" className="col-12 col-md-4 overflow-hidden">
-            <div className="card mt-4 mb-3  border shadow bg-transparent">
-              <img
-                src="https://picsum.photos/300/202"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body p-2 ">
-                <p
-                  style={{ marginBottom: "0rem" }}
-                  className="card-text p-0 text-secondary underline-hover"
-                >
-                  {headlimitedText}
-                </p>
-                <small className="m-0">
-                  <i className="fa-solid fa-calendar-days me-1"></i>
-                  <small>Jun 12,2024</small>
-                  <strong className="ms-2">"life Style"</strong>
-                </small>
-              </div>
-            </div>
-          </div>
-          <div data-aos="zoom-out" className="col-12 col-md-4 overflow-hidden">
-            <div className="card mt-4 mb-3  border shadow bg-transparent">
-              <img
-                src="https://picsum.photos/300/203"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body p-2 ">
-                <p
-                  style={{ marginBottom: "0rem" }}
-                  className="card-text p-0 text-secondary underline-hover"
-                >
-                  {headlimitedText}
-                </p>
-                <small className="m-0">
-                  <i className="fa-solid fa-calendar-days me-1"></i>
-                  <small>Jun 12,2024</small>
-                  <strong> "life Style"</strong>
-                </small>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
     </>

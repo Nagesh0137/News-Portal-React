@@ -1,7 +1,8 @@
 import React from "react";
 import ReadMoreBTN from "../Read more btn/ReadMoreBTN";
-
+import Articles from "../../Data";
 const LatestNews = () => {
+  // console.log(articles);
   return (
     <section>
       <div className="container">
@@ -9,133 +10,63 @@ const LatestNews = () => {
           <div className="col-12">
             <div
               data-aos="fade-up"
-              className="d-flex web-story shadow-lg align-items-center overflow-hidden"
+              className="d-flex web-story bg-white shadow-lg align-items-center overflow-hidden"
             >
               <h3 className="ms-5 fw-bold pt-2">
                 LATEST <span className="text-green">NEWS</span>
               </h3>
             </div>
           </div>
-          {/* Card 1 */}
-          <div className="col-md-4 mt-5" data-aos="fade-up-right">
-            <div
-              className="position-relative mb-3"
-              style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
-            >
-              <img
-                className="img-fluid w-100"
-                src="https://static.langimg.com/thumb/110940562/maharashtra-times-110940562.jpg?imgsize=94788&width=540&height=304&resizemode=75"
-                style={{ objectFit: "cover" }}
-                alt="News Image"
-              />
-              <div className="bg-white border border-top-0 p-4">
-                <div className="mb-2">
+          {/* Card Section */}
+          {Articles.slice(1, 4).map((Articles, index) => (
+            <div className="col-md-4 mt-5" data-aos="fade-up-right" key={index}>
+              <div
+                className="news-card d-flex flex-column position-relative mb-3"
+                style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+              >
+                <img
+                  className="img-fluid w-100"
+                  src={Articles.images}
+                  style={{ objectFit: "cover", maxHeight: "200px" }}
+                  alt="News Image"
+                />
+                <div className="bg-white equal border border-top-0 p-4 d-flex flex-column">
+                  <div className="mb-2">
+                    <a
+                      href="#"
+                      className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                    >
+                      {Articles.category}
+                    </a>
+                    <a href="#" className="text-body">
+                      <i className="fa-regular fa-calendar-days mx-2"></i>
+                      <small>{Articles.date}</small>
+                    </a>
+                    <a className="underline-hover ms-2" href="#">
+                      <i className="fa-solid fa-pen-to-square"></i>
+                      <small>{Articles.writer}</small>
+                    </a>
+                  </div>
                   <a
                     href="#"
-                    className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                    className="d-block mb-3 text-black text-uppercase"
                   >
-                    maharashtra
+                    <h4 className="text-to-limit fw-bold text-justify">
+                      {Articles.headline.split(" ").slice(0, 10).join(" ") +
+                        ".."}
+                    </h4>
                   </a>
-                  <a href="#" className="text-body">
-                    <i className="fa-regular fa-calendar-days mx-2"></i>
-                    <small>Jun 12, 2024</small>
-                  </a>
+                  <p className="m-0 text-to-limit-p">
+                    {Articles.content.split(" ").slice(0, 20).join(" ") + ".."}
+                  </p>
+                  {/* Button aligned at the bottom */}
+                  <div className="mt-auto d-flex justify-content-center">
+                    <ReadMoreBTN />
+                  </div>
                 </div>
-                <a href="#" className="d-block mb-3 text-black text-uppercase">
-                  <h4 className="text-to-limit fw-bold text-justify">
-                    मान्सून'ने महाराष्ट्र सुखावला, नाशिक-जळगाव जिल्ह्यात मुसळधार
-                    पाऊस, पेरण्यांना आला वेग
-                  </h4>
-                </a>
-                <p className="m-0 text-to-limit-p">
-                  राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी राजा आनंदात
-                  आहे. जमिनीमध्ये चांगली ओल निर्माण झाली असून खरिप हंगामातील
-                  पेरण्यांना वेग आला आहे.
-                </p>
-                <ReadMoreBTN />
               </div>
             </div>
-          </div>
-          {/* Card 2 */}
-          <div className="col-md-4 mt-5" data-aos="fade-up">
-            <div
-              className="position-relative mb-3"
-              style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
-            >
-              <img
-                className="img-fluid w-100"
-                src="https://static.langimg.com/thumb/110940562/maharashtra-times-110940562.jpg?imgsize=94788&width=540&height=304&resizemode=75"
-                style={{ objectFit: "cover" }}
-                alt="News Image"
-              />
-              <div className="bg-white border border-top-0 p-4">
-                <div className="mb-2">
-                  <a
-                    href="#"
-                    className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                  >
-                    maharashtra
-                  </a>
-                  <a href="#" className="text-body">
-                    <i className="fa-regular fa-calendar-days mx-2"></i>
-                    <small>Jun 12, 2024</small>
-                  </a>
-                </div>
-                <a href="#" className="d-block mb-3 text-black text-uppercase">
-                  <h4 className="text-to-limit fw-bold text-justify">
-                    मान्सून'ने महाराष्ट्र सुखावला, नाशिक-जळगाव जिल्ह्यात मुसळधार
-                    पाऊस, पेरण्यांना आला वेग
-                  </h4>
-                </a>
-                <p className="m-0 text-to-limit-p">
-                  राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी राजा आनंदात
-                  आहे. जमिनीमध्ये चांगली ओल निर्माण झाली असून खरिप हंगामातील
-                  पेरण्यांना वेग आला आहे.
-                </p>
-                <ReadMoreBTN />
-              </div>
-            </div>
-          </div>
-          {/* Card 3 */}
-          <div className="col-md-4 mt-5" data-aos="fade-up-left">
-            <div
-              className="position-relative mb-3"
-              style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
-            >
-              <img
-                className="img-fluid w-100"
-                src="https://static.langimg.com/thumb/110940562/maharashtra-times-110940562.jpg?imgsize=94788&width=540&height=304&resizemode=75"
-                style={{ objectFit: "cover" }}
-                alt="News Image"
-              />
-              <div className="bg-white border border-top-0 p-4">
-                <div className="mb-2">
-                  <a
-                    href="#"
-                    className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                  >
-                    maharashtra
-                  </a>
-                  <a href="#" className="text-body">
-                    <i className="fa-regular fa-calendar-days mx-2"></i>
-                    <small>Jun 12, 2024</small>
-                  </a>
-                </div>
-                <a href="#" className="d-block mb-3 text-black text-uppercase">
-                  <h4 className="text-to-limit fw-bold text-justify">
-                    मान्सून'ने महाराष्ट्र सुखावला, नाशिक-जळगाव जिल्ह्यात मुसळधार
-                    पाऊस, पेरण्यांना आला वेग
-                  </h4>
-                </a>
-                <p className="m-0 text-to-limit-p">
-                  राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी राजा आनंदात
-                  आहे. जमिनीमध्ये चांगली ओल निर्माण झाली असून खरिप हंगामातील
-                  पेरण्यांना वेग आला आहे.
-                </p>
-                <ReadMoreBTN />
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

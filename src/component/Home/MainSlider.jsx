@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import $ from "jquery";
+import Articles from "../../Data";
+import { NavLink } from "react-router-dom";
 
 export default function MainSlider() {
   useEffect(() => {
@@ -42,88 +44,50 @@ export default function MainSlider() {
             data-bs-ride="carousel"
             data-bs-interval="2500"
           >
+            {/* Carousel Indicators */}
             <ol className="carousel-indicators">
-              <li
-                data-bs-target="#carouselindicators"
-                data-bs-slide-to="0"
-              ></li>
-              <li
-                data-bs-target="#carouselindicators"
-                data-bs-slide-to="1"
-                className="active"
-              ></li>
-              <li
-                data-bs-target="#carouselindicators"
-                data-bs-slide-to="2"
-              ></li>
+              {Articles.slice(0, 3).map((_, index) => (
+                <li
+                  key={index}
+                  data-bs-target="#carouselindicators"
+                  data-bs-slide-to={index}
+                  className={index === 0 ? "active" : ""}
+                ></li>
+              ))}
             </ol>
+
+            {/* Carousel Inner (Slides) */}
             <div className="carousel-inner">
-              <div className="carousel-item active carousel-item-start">
-                <img
-                  className="d-block w-100"
-                  src="https://picsum.photos/800/501"
-                  alt="First slide"
-                />
-                <div className="carousel-caption d-md-block">
-                  <span className="badge bg-danger mb-3 shadow p-2 fs-6 text-white">
-                    STOCK MARKET
-                  </span>
-                  <br />
-                  <span className="d-flex text-center">
-                    <i className="fa-solid fa-calendar-days me-1"></i>
-                    <p className="date">13/06/2024</p>
-                    <i className="fa-solid fa-location-dot ms-3 me-1"></i>
-                    <p>USA</p>
-                  </span>
-                  <h3 className="m-0 p-0">
-                    Closing Bell: Nifty above 23,300, Sensex up 150 pts; mid,
-                    smallcaps shine
-                  </h3>
+              {Articles.slice(0, 3).map((article, index) => (
+                <div
+                  key={index}
+                  className={`carousel-item ${index === 0 ? "active" : ""}`}
+                >
+                  <img
+                    className="d-block w-100"
+                    src={article.images}
+                    alt={`Slide ${index + 1}`}
+                  />
+                  <div className="carousel-caption d-md-block">
+                    <span className="badge bg-danger mb-3 shadow p-2 fs-6 text-white">
+                      {article.category}
+                    </span>
+                    <br />
+                    <span className="d-flex text-center">
+                      <i className="fa-solid fa-calendar-days me-1"></i>
+                      <p className="date">{article.date}</p>
+                      <i className="fa-solid fa-location-dot ms-3 me-1"></i>
+                      <p>USA</p>
+                    </span>
+                    <h3 className="m-0 p-0">
+                      {article.headline.split(" ").slice(0, 8).join(" ") + ".."}
+                    </h3>
+                  </div>
                 </div>
-              </div>
-              <div className="carousel-item carousel-item-next carousel-item-start">
-                <img
-                  className="d-block w-100"
-                  src="https://picsum.photos/800/502"
-                  alt="Second slide"
-                />
-                <div className="carousel-caption d-md-block">
-                  <span className="badge bg-danger mb-3 p-2 fs-6 text-white">
-                    SPORTS
-                  </span>
-                  <br />
-                  <span className="d-flex text-center">
-                    <i className="fa-solid fa-calendar-days me-1"></i>
-                    <p className="date">13/06/2024</p>
-                    <i className="fa-solid fa-location-dot ms-3 me-1"></i>
-                    <p>USA</p>
-                  </span>
-                  <h3 className="m-0 p-0">India Win 3 T20 WCT20 2024 USA</h3>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <img
-                  className="d-block w-100"
-                  src="https://picsum.photos/800/500"
-                  alt="Third slide"
-                />
-                <div className="carousel-caption d-md-block">
-                  <span className="badge bg-danger mb-3 p-2 fs-6 text-white">
-                    LIFESTYLE
-                  </span>
-                  <br />
-                  <span className="d-flex text-center">
-                    <i className="fa-solid fa-calendar-days me-1"></i>
-                    <p className="date">13/06/2024</p>
-                    <i className="fa-solid fa-location-dot ms-3 me-1"></i>
-                    <p>USA</p>
-                  </span>
-                  <h3 className="m-0 p-0">
-                    Coca-Cola, rosé wine, red wine and fifty shades of yellow
-                  </h3>
-                </div>
-              </div>
+              ))}
             </div>
+
+            {/* Carousel Controls */}
             <button
               className="carousel-control-prev"
               type="button"
@@ -147,38 +111,40 @@ export default function MainSlider() {
       </div>
       <div className="col-12 col-md-5">
         <div className="row">
-          <div className="col-12 m-0 p-0 col-md-6 bg-dark">
-            <div className="row d-flex justify-content-center">
-              <div className=" featcard rounded-0">
-                <div
-                  id="featured"
-                  className="carousel slide carousel-fade"
-                  data-bs-ride="carousel"
-                >
-                  <div className="carousel-inner">
-                    <div className="carousel-item active">
-                      <div className="card border-0 border-end rounded-0 bg-dark text-white">
-                        <img
-                          className="card-img img-fluid rounded-0"
-                          style={{ minHeight: "280px" }}
-                          src="https://picsum.photos/700/636"
-                          alt=""
-                        />
-                        <div className="card-img-overlay d-flex linkfeat">
-                          <a href="#" className="align-self-end">
-                            <span className="badge bg-primary">मनोरंजन</span>
-                            <h4 className="card-title fs-6 fw-bold">
-                              Taylor Swift takes aim at 'dirty cheats' in
-                              Scooter Braun row
-                            </h4>
-                            <p className="textfeat" style={{ display: "none" }}>
-                              The pop star claims Braun - whose clients include
-                              Justin Bieber and Ariana Grande - bullied for her
-                              years and said she felt "sad" and "grossed out"
-                              that he now owns her music after buying the label
-                              she was signed to.
-                            </p>
-                          </a>
+          {Articles.slice(4, 6).map((Articles, index) => (
+            <div className="col-12 m-0 p-0 col-md-6 bg-dark" key={index}>
+              <div className="row d-flex justify-content-center">
+                <div className=" featcard rounded-0">
+                  <div
+                    id="featured"
+                    className="carousel slide carousel-fade"
+                    data-bs-ride="carousel"
+                  >
+                    <div className="carousel-inner">
+                      <div className="carousel-item active">
+                        <div className="card border-0 border-end rounded-0 bg-dark text-white">
+                          <img
+                            className="card-img img-fluid rounded-0"
+                            style={{ minHeight: "280px" }}
+                            src={Articles.images}
+                            alt=""
+                          />
+                          <div className="card-img-overlay d-flex linkfeat">
+                            <a href="#" className="align-self-end">
+                              <NavLink
+                                to={`/${Articles.category}`}
+                                className="badge bg-primary"
+                              >
+                                {Articles.category}
+                              </NavLink>
+                              <h4 className="card-title fs-6 fw-bold">
+                                {Articles.headline
+                                  .split(" ")
+                                  .slice(0, 8)
+                                  .join(" ") + "..."}
+                              </h4>
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -186,50 +152,7 @@ export default function MainSlider() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-12 m-0 p-0 col-md-6 bg-dark">
-            <div
-              className="row d-flex justify-content-center"
-              data-aos="fade-left"
-            >
-              <div className=" featcard">
-                <div
-                  id="featured"
-                  className="carousel slide carousel-fade"
-                  data-bs-ride="carousel"
-                >
-                  <div className="carousel-inner">
-                    <div className="carousel-item active">
-                      <div className="card border-0 bg-dark text-white">
-                        <img
-                          className="card-img img-fluid rounded-0"
-                          style={{ minHeight: "280px" }}
-                          src="https://picsum.photos/700/635"
-                          alt=""
-                        />
-                        <div className="card-img-overlay d-flex linkfeat">
-                          <a href="#" className="align-self-end">
-                            <span className="badge bg-primary">शिक्षण</span>
-                            <h4 className="card-title fs-6 fw-bold">
-                              Taylor Swift takes aim at 'dirty cheats' in
-                              Scooter Braun row
-                            </h4>
-                            <p className="textfeat" style={{ display: "none" }}>
-                              The pop star claims Braun - whose clients include
-                              Justin Bieber and Ariana Grande - bullied for her
-                              years and said she felt "sad" and "grossed out"
-                              that he now owns her music after buying the label
-                              she was signed to.
-                            </p>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
 
           {/* <!-- scrolling feed news --> */}
           <div className="col-12 p-0">
@@ -239,82 +162,42 @@ export default function MainSlider() {
                   <div className="post-inner">
                     <div className="carousel-inner-data">
                       <ul className="m-0 p-0 p-2">
-                        <li>
-                          <div className="post">
-                            <div className="post-date me-5">
-                              <p>06</p>
-                              <span>July</span>
+                        {Articles.slice(7, 11).map((Articles) => (
+                          <li className="bg-info">
+                            <div className="post shadow-sm bg-white overflow-hidden">
+                              <div
+                                style={{ height: "100%" }}
+                                className="post-date border me-5"
+                              >
+                                <p>{Articles.date.split("/").slice(0, 1)}</p>
+                                <span>
+                                  {(() => {
+                                    const dateParts = Articles.date.split("/"); // Split the date string into ["dd", "mm", "yyyy"]
+                                    const monthName = new Date(
+                                      `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`
+                                    ).toLocaleString("default", {
+                                      month: "long",
+                                    });
+                                    return monthName; // Display the full month name
+                                  })()}
+                                </span>
+                              </div>
+                              <div className="file-box">
+                                <span className="badge mt-2 bg-dangers p-2 text-white">
+                                  {Articles.category}
+                                </span>
+                              </div>
+                              <h5>
+                                <a href="#">
+                                  {Articles.headline
+                                    .split(" ")
+                                    .slice(0, 11)
+                                    .join(" ") + ".."}
+                                </a>
+                              </h5>
                             </div>
-                            <div className="file-box">
-                              <span className="badge bg-dangers p-2 text-white">
-                                शेअर मार्केट
-                              </span>
-                            </div>
-                            <h5>
-                              <a href="#">
-                                Lorem Ipsum is simply dummy text of the printing
-                                and typesetting industry.
-                              </a>
-                            </h5>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="post">
-                            <div className="post-date">
-                              <p>25</p>
-                              <span>April</span>
-                            </div>
-                            <div className="file-box">
-                              <span className="badge bg-dangers fs-6  p-2 text-white">
-                                महराष्ट्र
-                              </span>
-                            </div>
-                            <h5>
-                              <a href="#">
-                                Lorem Ipsum is simply dummy text of the printing
-                                and typesetting industry.
-                              </a>
-                            </h5>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="post">
-                            <div className="post-date">
-                              <p>25</p>
-                              <span>April</span>
-                            </div>
-                            <div className="file-box">
-                              <span className="badge bg-dangers fs-6  p-2 text-white">
-                                खेळ
-                              </span>
-                            </div>
-                            <h5>
-                              <a href="#">
-                                Lorem Ipsum is simply dummy text of the printing
-                                and typesetting industry.
-                              </a>
-                            </h5>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="post">
-                            <div className="post-date">
-                              <p>25</p>
-                              <span>April</span>
-                            </div>
-                            <div className="file-box">
-                              <span className="badge bg-dangers fs-6  p-2 text-white">
-                                मनोरंजन
-                              </span>
-                            </div>
-                            <h5>
-                              <a href="#">
-                                Lorem Ipsum is simply dummy text of the printing
-                                and typesetting industry.
-                              </a>
-                            </h5>
-                          </div>
-                        </li>
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   </div>

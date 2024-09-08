@@ -140,7 +140,7 @@ a:hover,
 .sidebar-page-container .sidebar .sidebar-post .post-inner .post {
   position: relative;
   padding: 0px 0px 0px 75px;
-  padding-bottom: 10px;
+  padding-bottom: 2px;
   margin-bottom: 6px;
   border-bottom: 1px solid #e5e5e5;
 }
@@ -338,6 +338,37 @@ a:hover,
   background-color: unset !important;
   transform: scale(1.4);
   color: #ff720d !important;
+}
+
+/* equal height */
+.news-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.equal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.text-to-limit {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limits the headline to two lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-to-limit-p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limits the paragraph to three lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mt-auto {
+  margin-top: auto; /* Ensures the button is at the bottom */
 }
 
 @media only screen and (max-width: 600px) {

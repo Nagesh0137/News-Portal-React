@@ -22,28 +22,28 @@ const Footer = () => {
             alt="Logo"
             className="img-fluid"
           />
-          <div className=" mt-5">
+          <div className="mt-5">
             <h4>Follow us</h4>
             <ul>
               <li>
                 <i className="fab fa-twitter"></i>
-                <a href=""></a>
+                <a href="#"></a>
               </li>
               <li>
                 <i className="fab fa-instagram"></i>
-                <a href=""></a>
+                <a href="#"></a>
               </li>
               <li>
                 <i className="fab fa-facebook-f"></i>
-                <a href=""></a>
+                <a href="#"></a>
               </li>
               <li>
                 <i className="fab fa-youtube"></i>
-                <a href=""></a>
+                <a href="#"></a>
               </li>
               <li>
                 <i className="fab fa-whatsapp"></i>
-                <a href=""></a>
+                <a href="#"></a>
               </li>
             </ul>
           </div>
@@ -51,13 +51,13 @@ const Footer = () => {
         <div className="col-12 col-lg-3 f-2">
           <h6>Popular News</h6>
           <h5>
-            <a href="" className="badge bg-green bg-g">
+            <a href="#" className="badge bg-green bg-g">
               Sport
             </a>
           </h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           <h5>
-            <a href="" className="badge bg-org">
+            <a href="#" className="badge bg-org">
               Life Style
             </a>
           </h5>
@@ -68,35 +68,35 @@ const Footer = () => {
           <ul className="ms-2">
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href="">मुखपृष्ठ</a>
+              <a href="#">मुखपृष्ठ</a>
             </li>
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href=""> महाराष्ट्र</a>
+              <a href="#">महाराष्ट्र</a>
             </li>
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href="">क्रीडा</a>
+              <a href="#">क्रीडा</a>
             </li>
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href="">लाइफस्टाईल</a>
+              <a href="#">लाइफस्टाईल</a>
             </li>
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href=""> मनोरंजन</a>
+              <a href="#">मनोरंजन</a>
             </li>
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href=""> शिक्षण</a>
+              <a href="#">शिक्षण</a>
             </li>
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href="">शेअर बाजार</a>
+              <a href="#">शेअर बाजार</a>
             </li>
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href="">हवामान</a>
+              <a href="#">हवामान</a>
             </li>
           </ul>
         </div>
@@ -109,7 +109,7 @@ const Footer = () => {
                     Get access to <b>Breaking News</b>
                   </h5>
                   <div className="text-left">
-                    <span>we will send only Latest News reach you inbox</span>
+                    <span>we will send only Latest News reach your inbox</span>
                   </div>
                 </div>
               </div>
@@ -119,7 +119,12 @@ const Footer = () => {
                   className="form-control"
                   placeholder="e.g. john@gmail.com"
                 />
-                <button className="btn btn-danger">Notify Me</button>
+                <button
+                  className="btn btn-danger"
+                  onClick={handleSubscribeClick}
+                >
+                  Notify Me
+                </button>
               </div>
             </div>
           </div>
@@ -140,8 +145,9 @@ const Footer = () => {
             <li>
               <NavLink
                 to="/"
-                className="nav-link"
-                activeClassName="nav-link-active"
+                className={({ isActive }) =>
+                  isActive ? "nav-link nav-link-active" : "nav-link"
+                }
               >
                 Home
               </NavLink>
@@ -149,8 +155,9 @@ const Footer = () => {
             <li>
               <NavLink
                 to="/"
-                className="nav-link"
-                activeClassName="nav-link-active"
+                className={({ isActive }) =>
+                  isActive ? "nav-link nav-link-active" : "nav-link"
+                }
               >
                 About-Vartaman Time
               </NavLink>
@@ -158,8 +165,9 @@ const Footer = () => {
             <li>
               <NavLink
                 to="/"
-                className="nav-link"
-                activeClassName="nav-link-active"
+                className={({ isActive }) =>
+                  isActive ? "nav-link nav-link-active" : "nav-link"
+                }
               >
                 Contact
               </NavLink>
@@ -167,8 +175,9 @@ const Footer = () => {
             <li>
               <NavLink
                 to="/"
-                className="nav-link"
-                activeClassName="nav-link-active"
+                className={({ isActive }) =>
+                  isActive ? "nav-link nav-link-active" : "nav-link"
+                }
               >
                 Privacy Policy
               </NavLink>
@@ -176,8 +185,9 @@ const Footer = () => {
             <li>
               <NavLink
                 to="/"
-                className="nav-link"
-                activeClassName="nav-link-active"
+                className={({ isActive }) =>
+                  isActive ? "nav-link nav-link-active" : "nav-link"
+                }
               >
                 Disclaimer
               </NavLink>

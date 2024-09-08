@@ -33,15 +33,17 @@ a {
   color: #fff;
   text-decoration: none;
 }
-.underline-hover:hover{
+.underline-hover:hover {
   text-decoration: underline !important;
   cursor: pointer !important;
-  color: rgb(0, 174, 255) ;
+  color: rgb(0, 174, 255);
 }
-.badge:hover{
+.badge:hover {
   text-decoration: underline !important;
   cursor: pointer !important;
-  
+}
+.badge {
+  text-transform: uppercase !important;
 }
 
 .ticker {

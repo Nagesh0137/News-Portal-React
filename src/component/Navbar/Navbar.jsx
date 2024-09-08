@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./NavbarStyle.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +11,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { NavLink } from "react-router-dom";
+import { ContextStore } from "../../Store/ContextStore";
 
 const Topbar = () => {
   const currentDate = new Date();
@@ -97,59 +98,97 @@ const Topbar = () => {
   );
 };
 
-const MenuBar = () => (
-  <div className="container-fluid p-0">
-    <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
-      <a href="index.html" className="navbar-brand d-block d-lg-none">
-        <h1 className="m-0 display-4 text-uppercase text-primary">
-          News<span className="text-white font-weight-normal">Portal</span>
-        </h1>
-      </a>
-      <button
-        type="button"
-        className="navbar-toggler"
-        data-toggle="collapse"
-        data-target="#navbarCollapse"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div
-        className="collapse navbar-collapse justify-content-between px-0 px-lg-3"
-        id="navbarCollapse"
-      >
-        <div className="navbar-nav mr-auto py-0 menu">
-          <NavLink to="/" className="nav-item">
-            Home
-          </NavLink>
-          <NavLink to="/maharashtra" className="nav-item">
-            Maharashtra
-          </NavLink>
-          <NavLink to="/sport" className="nav-item">
-            Sport
-          </NavLink>
-          <NavLink to="/lifestyle" className="nav-item">
-            Life Style
-          </NavLink>
-          <NavLink to="/entertainment" className="nav-item">
-            Entertainment
-          </NavLink>
-          <NavLink to="/education" className="nav-item">
-            Education
-          </NavLink>
-          <NavLink to="/stock_market" className="nav-item">
-            Stock Market
-          </NavLink>
-          <NavLink to="/weather" className="nav-item">
-            Weather
-          </NavLink>
-          <NavLink to="/web_stories" className="nav-item">
-            web stories
-          </NavLink>
+const MenuBar = () => {
+  const { handleCatagory } = useContext(ContextStore);
+  // console.log(catagory);
+  return (
+    <div className="container-fluid p-0">
+      <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
+        <a href="index.html" className="navbar-brand d-block d-lg-none">
+          <h1 className="m-0 display-4 text-uppercase text-primary">
+            News<span className="text-white font-weight-normal">Portal</span>
+          </h1>
+        </a>
+        <button
+          type="button"
+          className="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div
+          className="collapse navbar-collapse justify-content-between px-0 px-lg-3"
+          id="navbarCollapse"
+        >
+          <div className="navbar-nav mr-auto py-0 menu">
+            <NavLink
+              to="/"
+              className="nav-item"
+              onClick={(e) => handleCatagory(e.target.innerText)}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/maharashtra"
+              className="nav-item"
+              onClick={(e) => handleCatagory(e.target.innerText)}
+            >
+              Maharashtra
+            </NavLink>
+            <NavLink
+              to="/sport"
+              className="nav-item"
+              onClick={(e) => handleCatagory(e.target.innerText)}
+            >
+              Sport
+            </NavLink>
+            <NavLink
+              to="/lifestyle"
+              className="nav-item"
+              onClick={(e) => handleCatagory(e.target.innerText)}
+            >
+              Life Style
+            </NavLink>
+            <NavLink
+              to="/entertainment"
+              className="nav-item"
+              onClick={(e) => handleCatagory(e.target.innerText)}
+            >
+              Entertainment
+            </NavLink>
+            <NavLink
+              to="/education"
+              className="nav-item"
+              onClick={(e) => handleCatagory(e.target.innerText)}
+            >
+              Education
+            </NavLink>
+            <NavLink
+              to="/Stock Market"
+              className="nav-item"
+              onClick={(e) => {
+                handleCatagory(e.target.innerText);
+              }}
+            >
+              Stock Market
+            </NavLink>
+            <NavLink
+              to="/weather"
+              className="nav-item"
+              onClick={(e) => handleCatagory(e.target.innerText)}
+            >
+              Weather
+            </NavLink>
+            <NavLink to="/web_stories" className="nav-item">
+              web stories
+            </NavLink>
+          </div>
         </div>
-      </div>
-    </nav>
-  </div>
-);
+      </nav>
+    </div>
+  );
+};
 
 const Navbar = () => (
   <>

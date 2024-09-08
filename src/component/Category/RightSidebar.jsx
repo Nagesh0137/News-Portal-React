@@ -1,6 +1,7 @@
 import React from "react";
 import WebStories from "../Home/WebStories";
-
+import Articles from "../../Data";
+import { NavLink } from "react-router-dom";
 export default function RightSidebar() {
   return (
     <>
@@ -81,108 +82,45 @@ export default function RightSidebar() {
           </div>
         </div>
         <div className="col-12 p-3 pt-0">
-          <div className="mb-3 w-100">
-            <div
-              className="card rounded-0 mb-3 shadow bg-white"
-              data-aos="zoom-out"
-              style={{ maxWidth: "100%" }}
-            >
-              <div className="row g-0">
-                <div className="col-md-4">
-                  <img
-                    src="https://picsum.photos/800/604"
-                    className="img-fluid h-100 "
-                    alt="..."
-                  />
-                </div>
-                <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className="card-title">
-                      <span className="badge bg-green p-2 text-white">
-                        STOCK MARKET
-                      </span>
-                      <small className="text-body-secondary ms-1">
-                        Jun 12,2024
-                      </small>
-                    </h5>
+          {Articles.slice(0, 3).map((Articles, index) => (
+            <div className="mb-3 w-100" key={index}>
+              <div
+                className="card rounded-0 mb-3 shadow bg-white"
+                data-aos="zoom-out"
+                style={{ maxWidth: "100%" }}
+              >
+                <div className="row g-0">
+                  <div className="col-md-4">
+                    <img
+                      src={Articles.images}
+                      className="img-fluid h-100 "
+                      alt="..."
+                    />
+                  </div>
+                  <div className="col-md-8">
+                    <div className="card-body">
+                      <h5 className="card-title">
+                        <NavLink
+                          to={`/${Articles.category}`}
+                          className="badge bg-green p-2 text-white"
+                        >
+                          {Articles.category}
+                        </NavLink>
+                        <small className="text-body-secondary ms-1">
+                          {Articles.date}
+                        </small>
+                      </h5>
 
-                    <p className="card-text underline-hover m-0 p-0 fw-bold ">
-                      राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी राजा
-                      आनंदात आहे.
-                    </p>
+                      <p className="card-text underline-hover m-0 p-0 fw-bold ">
+                        {Articles.headline.split(" ").slice(0, 8).join(" ") +
+                          ".."}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="mb-3 w-100">
-            <div
-              className="card rounded-0 mb-3 shadow bg-white"
-              data-aos="zoom-out"
-              style={{ maxWidth: "100%" }}
-            >
-              <div className="row g-0">
-                <div className="col-md-4">
-                  <img
-                    src="https://picsum.photos/800/603"
-                    className="img-fluid h-100 "
-                    alt="..."
-                  />
-                </div>
-                <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className="card-title">
-                      <span className="badge bg-green p-2 text-white">
-                        STOCK MARKET
-                      </span>
-                      <small className="text-body-secondary ms-1">
-                        Jun 12,2024
-                      </small>
-                    </h5>
-
-                    <p className="card-text underline-hover m-0 p-0 fw-bold ">
-                      राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी राजा
-                      आनंदात आहे.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="mb-3 w-100">
-            <div
-              className="card rounded-0 mb-3 shadow bg-white"
-              data-aos="zoom-out"
-              style={{ maxWidth: "100%" }}
-            >
-              <div className="row g-0">
-                <div className="col-md-4">
-                  <img
-                    src="https://picsum.photos/800/605"
-                    className="img-fluid h-100 "
-                    alt="..."
-                  />
-                </div>
-                <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className="card-title">
-                      <span className="badge bg-green p-2 text-white">
-                        STOCK MARKET
-                      </span>
-                      <small className="text-body-secondary ms-1">
-                        Jun 12,2024
-                      </small>
-                    </h5>
-
-                    <p className="card-text underline-hover m-0 p-0 fw-bold ">
-                      राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी राजा
-                      आनंदात आहे.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
         {/* sidebar web Stories */}
 

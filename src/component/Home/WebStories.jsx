@@ -4,6 +4,7 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./HomeStyle.css";
 import { Link } from "react-router-dom";
+import Articles from "../../Data";
 export default function WebStories({ storySize }) {
   let size = Number(storySize);
   const options = {
@@ -42,7 +43,7 @@ export default function WebStories({ storySize }) {
           </div>
           <div className="col-12">
             <Carousel options={options} className="owl-carousel mt-5 owl-theme">
-              {Array.from({ length: 10 }).map((_, index) => (
+              {Articles.slice(0, 10).map((Articles, index) => (
                 <Link to="/web_stories" key={index}>
                   <div
                     className="item"
@@ -58,16 +59,16 @@ export default function WebStories({ storySize }) {
                     />
                     <div className="carousel-caption d-md-block m-0 p-0">
                       <span className="badge bg-success mb-3 p-2 text-white">
-                        STOCK MARKET
+                        {Articles.category}
                       </span>
                       <br />
                       <span className="d-flex text-center">
                         <i className="fa-solid fa-calendar-days me-1"></i>
-                        <p className="date">13/06/2024</p>
+                        <p className="date">{Articles.date}</p>
                       </span>
                       <h3 className="m-0 p-0">
-                        Closing Bell: Nifty above 23,300, Sensex up 150 pts;
-                        mid, smallcaps shine
+                        {Articles.headline.split(" ").slice(0, 7).join(" ") +
+                          ".."}
                       </h3>
                     </div>
                   </div>

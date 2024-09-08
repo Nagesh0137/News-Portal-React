@@ -1,17 +1,13 @@
 import React from "react";
 import "./CategoryStyle.css";
 import ReadMoreBTN from "../Read more btn/ReadMoreBTN";
-import TrendingNews from "../Home/TrendingNews";
 import PaginatedCards from "./CardPagination";
 import RelatedPost from "./RelatedPost";
 import RightSidebar from "./RightSidebar";
-export default function Category() {
-  const headtitle =
-    "मान्सून'ने महाराष्ट्र सुखावला, नाशिक-जळगाव जिल्ह्यात मुसळधार पाऊस, पेरण्यांना आला वेग";
-  const paragraphtitle = `राजा आनंदात आहे. जमिनीमध्ये चांगली ओल निर्माण झाली असून खरिप हंगामातील पेरण्यांना वेग आला आहे`;
-  const headlimitedText = headtitle.split(" ").slice(0, 10).join(" ") + "...";
-  const paralimitedText =
-    paragraphtitle.split(" ").slice(0, 15).join(" ") + "...";
+import { NavLink } from "react-router-dom";
+export default function Category({ object }) {
+  console.log(object);
+
   return (
     <>
       <div className="container-fluid m-0 p-0 overflow-hidden">
@@ -22,13 +18,15 @@ export default function Category() {
               className="bg-light w-100 border border-secondary-subtle"
             >
               <b className="text-primary">Home</b>
-              <small className="">-Maharashtra</small>
+              <small className="">-{object && object[0].category}</small>
             </div>
             <div
               data-aos="fade-up"
               className="h-100 category-head d-flex align-items-center justify-content-center"
             >
-              <h1 className="text-center fw-bold text-white z-1">Maharastra</h1>
+              <h1 className="text-center fw-bold text-white z-1">
+                {object && object[0].category}
+              </h1>
             </div>
           </div>
         </div>
@@ -40,10 +38,7 @@ export default function Category() {
               <div className="row">
                 <div className="col-lg-8">
                   <div className="row">
-                    <PaginatedCards
-                      headlimitedText={headlimitedText}
-                      paralimitedText={paralimitedText}
-                    ></PaginatedCards>
+                    <PaginatedCards cardData={object}></PaginatedCards>
 
                     {/* horizontal news */}
                     <div data-aos="zoom-out" className="col-12">
@@ -60,7 +55,7 @@ export default function Category() {
                                 objectFit: "cover",
                                 height: "100%",
                               }}
-                              src="https://picsum.photos/800/600"
+                              src={object[2].images}
                               className="img-fluid rounded-0"
                               alt="..."
                             />
@@ -68,24 +63,25 @@ export default function Category() {
                           <div className="col-md-8">
                             <div className="card-body">
                               <h5 className="card-title">
-                                <span className="badge bg-green p-2 text-white">
-                                  STOCK MARKET
-                                </span>
+                                <NavLink className="badge bg-green p-2 text-white">
+                                  {object[2].category}
+                                </NavLink>
                               </h5>
                               <a className="text-body m-2 " href="#">
-                                <i class="fa-solid fa-calendar-days me-1"></i>
-                                <small>Jun 12,2024</small>
+                                <i className="fa-solid fa-calendar-days me-1"></i>
+                                <small>{object[2].date}</small>
                               </a>
 
                               <span className="underline-hover">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                                <small>Rohit Sharama</small>
+                                <i className="fa-solid fa-pen-to-square"></i>
+                                <small>{object[2].writer}</small>
                               </span>
                               <hr className="m-0 my-1" />
-                              <p className="card-text fw-bold text-to-limit-p">
-                                राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी
-                                राजा आनंदात आहे. जमिनीमध्ये चांगली ओल निर्माण
-                                झाली असून खरिप हंगामातील पेरण्यांना वेग आला आहे.
+                              <p className="card-text text-capitalize fw-bold fs-5 text-to-limit-p">
+                                {object[2].headline
+                                  .split(" ")
+                                  .slice(0, 10)
+                                  .join(" ") + "..."}
                               </p>
                               <ReadMoreBTN></ReadMoreBTN>
                             </div>
@@ -94,174 +90,56 @@ export default function Category() {
                       </div>
                     </div>
                     {/* First Horizontal card */}
-                    <div data-aos="zoom-out" className="col-6 col-md-6">
+                    {object.slice(3, 8).map((objects, index) => (
                       <div
-                        className="card rounded-0 mb-3 shadow"
-                        data-aos="fade-up-left"
-                        style={{ maxWidth: "100%" }}
+                        data-aos="zoom-out"
+                        className="col-6 col-md-6"
+                        key={index}
                       >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              style={{
-                                aspectRatio: "4/4",
-                                objectFit: "cover",
-                                height: "100%",
-                              }}
-                              src="https://picsum.photos/800/604"
-                              className="img-fluid h-100 rounded-0"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">
-                                <span className="badge bg-green p-2 text-white">
-                                  STOCK MARKET
-                                </span>
-                              </h5>
-                              <p className="card-text m-0 p-0">
-                                <small className="text-body-secondary">
-                                  Jun 12,2024
-                                </small>
-                              </p>
-                              <p className="card-text m-0 p-0 fw-bold text-to-limit">
-                                राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी
-                                राजा आनंदात आहे.
-                              </p>
+                        <div
+                          className="card rounded-0 mb-3 shadow"
+                          data-aos="fade-up-left"
+                          style={{ maxWidth: "100%" }}
+                        >
+                          <div className="row g-0">
+                            <div className="col-md-4">
+                              <img
+                                style={{
+                                  aspectRatio: "4/4",
+                                  objectFit: "cover",
+                                  height: "100%",
+                                }}
+                                src={objects.images}
+                                className="img-fluid h-100 rounded-0"
+                                alt="..."
+                              />
+                            </div>
+                            <div className="col-md-8">
+                              <div className="card-body equal-height">
+                                <h5 className="card-title">
+                                  <NavLink className="badge bg-green p-2 text-white">
+                                    {objects.category}
+                                  </NavLink>
+                                </h5>
+                                <p className="card-text m-0 p-0">
+                                  <small className="text-body-secondary">
+                                    {objects.date}
+                                  </small>
+                                </p>
+                                <p className="card-text m-0 p-0 fw-bold text-to-limit">
+                                  {objects.headline
+                                    .split(" ")
+                                    .slice(0, 9)
+                                    .join(" ") + ".."}
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    {/* Second Horizontal card */}
-                    <div data-aos="zoom-out" className="col-6 col-md-6">
-                      <div
-                        className="card mb-3 rounded-0 shadow"
-                        data-aos="fade-up"
-                        style={{ maxWidth: "100%" }}
-                      >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              style={{
-                                aspectRatio: "4/4",
-                                objectFit: "cover",
-                                height: "100%",
-                              }}
-                              src="https://picsum.photos/800/603"
-                              className="img-fluid h-100 rounded-0"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">
-                                <span className="badge bg-green p-2 text-white">
-                                  STOCK MARKET
-                                </span>
-                              </h5>
-                              <p className="card-text m-0 p-0">
-                                <small className="text-body-secondary">
-                                  Jun 12,2024
-                                </small>
-                              </p>
-                              <p className="card-text m-0 p-0 fw-bold text-to-limit">
-                                राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी
-                                राजा आनंदात आहे.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Third Horizontal card */}
-                    <div data-aos="zoom-out" className="col-12 col-md-6">
-                      <div
-                        className="card mb-3 rounded-0 shadow"
-                        data-aos="fade-up-right"
-                        style={{ maxWidth: "100%" }}
-                      >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              style={{
-                                aspectRatio: "4/4",
-                                objectFit: "cover",
-                                height: "100%",
-                              }}
-                              src="https://picsum.photos/800/602"
-                              className="img-fluid d-none d-md-block h-100 rounded-0"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">
-                                <span className="badge bg-green p-2 text-white">
-                                  STOCK MARKET
-                                </span>
-                              </h5>
-                              <p className="card-text m-0 p-0">
-                                <small className="text-body-secondary">
-                                  Jun 12,2024
-                                </small>
-                              </p>
-                              <p className="card-text m-0 p-0 fw-bold text-to-limit">
-                                राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी
-                                राजा आनंदात आहे.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {/* Fourth Horizontal card */}
-                    <div data-aos="zoom-out" className="col-12 col-md-6">
-                      <div
-                        className="card mb-3 rounded-0 shadow"
-                        data-aos="fade-up"
-                        style={{ maxWidth: "100%" }}
-                      >
-                        <div className="row g-0">
-                          <div className="col-md-4">
-                            <img
-                              style={{
-                                aspectRatio: "4/4",
-                                objectFit: "cover",
-                                height: "100%",
-                              }}
-                              src="https://picsum.photos/800/601"
-                              className="img-fluid d-none d-md-block h-100 rounded-0"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">
-                                <span className="badge bg-green p-2 text-white">
-                                  STOCK MARKET
-                                </span>
-                              </h5>
-                              <p className="card-text m-0 p-0">
-                                <small className="text-body-secondary">
-                                  Jun 12,2024
-                                </small>
-                              </p>
-                              <p className="card-text m-0 p-0 fw-bold text-to-limit">
-                                राज्यभरात मान्सूनचे जोरदार आगमन झाले असून शेतकरी
-                                राजा आनंदात आहे.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    ))}
                     {/* Related Post */}
-                    <RelatedPost
-                      headlimitedText={headlimitedText}
-                      paralimitedText={paralimitedText}
-                    ></RelatedPost>
+                    <RelatedPost></RelatedPost>
                   </div>
                 </div>
 

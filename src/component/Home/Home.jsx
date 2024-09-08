@@ -7,7 +7,6 @@ import MainSlider from "./MainSlider";
 import WebStories from "./WebStories";
 import LatestNews from "./LatestNews";
 import TrendingNews from "./TrendingNews";
-
 export default function Home() {
   useEffect(() => {
     AOS.init();
@@ -17,7 +16,6 @@ export default function Home() {
     <>
       <main>
         <SliderNews></SliderNews>
-
         <div className="container-fluid overflow-hidden">
           <div className="row">
             <MainSlider></MainSlider>

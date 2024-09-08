@@ -1,37 +1,11 @@
 import React, { useState } from "react";
 import ReadMoreBTN from "../Read more btn/ReadMoreBTN";
 import styles from "./PaginatedCards.module.css";
+import { NavLink } from "react-router-dom";
 
-const PaginatedCards = ({ paralimitedText, headlimitedText }) => {
+const PaginatedCards = ({ cardData }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 2;
-
-  const cardData = [
-    {
-      id: 1,
-      title: `${headlimitedText}`,
-      imgSrc: "https://picsum.photos/800/500",
-      text: `${paralimitedText}`,
-    },
-    {
-      id: 2,
-      title: `${headlimitedText}`,
-      imgSrc: "https://picsum.photos/800/501",
-      text: `${paralimitedText}`,
-    },
-    {
-      id: 3,
-      title: `${headlimitedText}`,
-      imgSrc: "https://picsum.photos/800/502",
-      text: `${paralimitedText}`,
-    },
-    {
-      id: 4,
-      title: `${headlimitedText}`,
-      imgSrc: "https://picsum.photos/800/504",
-      text: `${paralimitedText}`,
-    },
-  ];
 
   // Get the current cards to display
   const indexOfLastCard = currentPage * cardsPerPage;
@@ -53,37 +27,39 @@ const PaginatedCards = ({ paralimitedText, headlimitedText }) => {
             <div className={`card shadow rounded-0 h-100 ${styles.card}`}>
               <img
                 className={`card-img-top rounded-0 ${styles.imgFluid}`}
-                src={card.imgSrc}
+                src={card.images}
                 alt="News"
               />
               <div className={`card-body ${styles.cardBody}`}>
                 <div className="mb-2">
-                  <a
+                  <NavLink
                     className="badge bg-success text-uppercase font-weight-semi-bold p-2 me-2"
-                    href="#"
+                    to={`/${card.category}`}
                   >
-                    Maharashtra
-                  </a>
+                    {card.category}
+                  </NavLink>
                   <a className="text-body me-2" href="#">
                     <i className="fa-solid fa-calendar-days me-1"></i>
-                    <small>Jun 12, 2024</small>
+                    <small>{card.date}</small>
                   </a>
                   <a className="underline-hover" href="#">
                     <i className="fa-solid fa-pen-to-square"></i>
-                    <small>Rohit Sharma</small>
+                    <small>{card.writer}</small>
                   </a>
                 </div>
                 <hr className="my-2" />
                 <a
-                  className={`h4 text-black text-uppercase font-weight-bold ${styles.cardTitle}`}
+                  className={`h4 text-black text-capitalize text-uppercase font-weight-bold ${styles.cardTitle}`}
                   href="#"
                 >
-                  {card.title}
+                  {card.headline.split(" ").slice(0, 7).join(" ") + ".."}
                 </a>
                 <p className={`card-text text-secondary ${styles.cardText}`}>
-                  {card.text}
+                  {card.content.split(" ").slice(0, 20).join(" ") + ".."}
                 </p>
-                <ReadMoreBTN />
+                <div className="">
+                  <ReadMoreBTN />
+                </div>
               </div>
             </div>
           </div>
