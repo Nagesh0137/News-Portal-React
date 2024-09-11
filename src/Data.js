@@ -1,6 +1,6 @@
 const Articles = [
   {
-    "category": "Maharashtra",
+    "category": "maharashtra",
     "date": "24/08/2024",
     "writer": "Rohit Sharma",
     "headline": "A powerful earthquake has struck the city.",

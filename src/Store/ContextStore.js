@@ -3,11 +3,11 @@ import { createContext, useState } from "react";
 export const ContextStore = createContext();
 
 const ContextProvider = ({ children }) => {
-  const [catagory, setCatagory] = useState("home");
-  console.log(catagory)
+  const [catagory, setCatagory] = useState();
+
 
   const handleCatagory = (e) => {
-    // console.log(e)
+   
     setCatagory(e);
   };
 

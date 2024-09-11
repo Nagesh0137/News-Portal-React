@@ -3,7 +3,7 @@ import $ from "jquery";
 import Articles from "../../Data";
 import { NavLink } from "react-router-dom";
 
-export default function MainSlider() {
+export default function MainSlider({ handleCatagory }) {
   useEffect(() => {
     const tickerLength = $(".carousel-inner-data ul li").length;
     const tickerHeight = $(".carousel-inner-data ul li").outerHeight();
@@ -58,7 +58,7 @@ export default function MainSlider() {
 
             {/* Carousel Inner (Slides) */}
             <div className="carousel-inner">
-              {Articles.slice(0, 3).map((article, index) => (
+              {Articles.slice(1, 4).map((article, index) => (
                 <div
                   key={index}
                   className={`carousel-item ${index === 0 ? "active" : ""}`}
@@ -69,9 +69,13 @@ export default function MainSlider() {
                     alt={`Slide ${index + 1}`}
                   />
                   <div className="carousel-caption d-md-block">
-                    <span className="badge bg-danger mb-3 shadow p-2 fs-6 text-white">
+                    <NavLink
+                      to={`/${article.category}`}
+                      onClick={(e) => handleCatagory(article.category)}
+                      className="badge bg-danger mb-3 shadow p-2 fs-6 text-white"
+                    >
                       {article.category}
-                    </span>
+                    </NavLink>
                     <br />
                     <span className="d-flex text-center">
                       <i className="fa-solid fa-calendar-days me-1"></i>
@@ -133,6 +137,9 @@ export default function MainSlider() {
                             <a href="#" className="align-self-end">
                               <NavLink
                                 to={`/${Articles.category}`}
+                                onClick={(e) =>
+                                  handleCatagory(Articles.category)
+                                }
                                 className="badge bg-primary"
                               >
                                 {Articles.category}
@@ -162,13 +169,10 @@ export default function MainSlider() {
                   <div className="post-inner">
                     <div className="carousel-inner-data">
                       <ul className="m-0 p-0 p-2">
-                        {Articles.slice(7, 11).map((Articles) => (
-                          <li className="bg-info">
+                        {Articles.slice(7, 11).map((Articles, index) => (
+                          <li className="bg-info" key={index}>
                             <div className="post shadow-sm bg-white overflow-hidden">
-                              <div
-                                style={{ height: "100%" }}
-                                className="post-date border me-5"
-                              >
+                              <div style={{}} className="post-date border me-5">
                                 <p>{Articles.date.split("/").slice(0, 1)}</p>
                                 <span>
                                   {(() => {
@@ -183,13 +187,19 @@ export default function MainSlider() {
                                 </span>
                               </div>
                               <div className="file-box">
-                                <span className="badge mt-2 bg-dangers p-2 text-white">
+                                <NavLink
+                                  to={`/${Articles.category}`}
+                                  onClick={(e) =>
+                                    handleCatagory(Articles.category)
+                                  }
+                                  className="badge mt-2 bg-dangers p-2 text-white"
+                                >
                                   {Articles.category}
-                                </span>
+                                </NavLink>
                               </div>
                               <h5>
                                 <a href="#">
-                                  {Articles.headline
+                                  {Articles.content
                                     .split(" ")
                                     .slice(0, 11)
                                     .join(" ") + ".."}

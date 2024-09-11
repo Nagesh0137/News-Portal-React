@@ -6,8 +6,9 @@ import RelatedPost from "./RelatedPost";
 import RightSidebar from "./RightSidebar";
 import { NavLink } from "react-router-dom";
 export default function Category({ object }) {
-  console.log(object);
-
+  if (!object || object.length === 0) {
+    return <div>No articles found for this category.</div>;
+  }
   return (
     <>
       <div className="container-fluid m-0 p-0 overflow-hidden">

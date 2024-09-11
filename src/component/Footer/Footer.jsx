@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import "./FooterStyle.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import { NavLink } from "react-router-dom";
-
+import { Link, NavLink } from "react-router-dom";
+import Articles from "../../Data";
+import { ContextStore } from "../../Store/ContextStore";
 const Footer = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+  const { handleCatagory } = useContext(ContextStore);
 
   const handleSubscribeClick = () => {
     confirm("Are you sure");
@@ -50,53 +52,102 @@ const Footer = () => {
         </div>
         <div className="col-12 col-lg-3 f-2">
           <h6>Popular News</h6>
-          <h5>
-            <a href="#" className="badge bg-green bg-g">
-              Sport
-            </a>
-          </h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          <h5>
-            <a href="#" className="badge bg-org">
-              Life Style
-            </a>
-          </h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          {Articles.slice(0, 2).map((data, index) => (
+            <div key={index}>
+              <h5>
+                <NavLink
+                  to={`/${data?.category || "default-category"}`} // Dynamic URL based on category
+                  className="badge bg-green bg-g"
+                >
+                  {data.category}
+                </NavLink>
+              </h5>
+              <p>{data.headline.split(" ").slice(0, 10).join(" ")}</p>
+            </div>
+          ))}
         </div>
         <div className="col-12 col-lg-2 f-3">
           <h6>Categories</h6>
           <ul className="ms-2">
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href="#">मुखपृष्ठ</a>
+              <NavLink
+                to="/"
+                className="nav-item"
+                onClick={(e) => handleCatagory(e.target.innerText)}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href="#">महाराष्ट्र</a>
+              <NavLink
+                to="/Maharashtra"
+                className="nav-item"
+                onClick={(e) => handleCatagory(e.target.innerText)}
+              >
+                Maharashtra
+              </NavLink>
             </li>
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href="#">क्रीडा</a>
+              <NavLink
+                to="/Sport"
+                className="nav-item"
+                onClick={(e) => handleCatagory(e.target.innerText)}
+              >
+                Sport
+              </NavLink>
             </li>
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href="#">लाइफस्टाईल</a>
+              <NavLink
+                to="/LifeStyle"
+                className="nav-item"
+                onClick={(e) => handleCatagory(e.target.innerText)}
+              >
+                Life Style
+              </NavLink>
             </li>
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href="#">मनोरंजन</a>
+              <NavLink
+                to="/Entertainment"
+                className="nav-item"
+                onClick={(e) => handleCatagory(e.target.innerText)}
+              >
+                Entertainment
+              </NavLink>
             </li>
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href="#">शिक्षण</a>
+              <NavLink
+                to="/Education"
+                className="nav-item"
+                onClick={(e) => handleCatagory(e.target.innerText)}
+              >
+                Education
+              </NavLink>
             </li>
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href="#">शेअर बाजार</a>
+              <NavLink
+                to="/StockMarket"
+                className="nav-item"
+                onClick={(e) => handleCatagory(e.target.innerText)}
+              >
+                Stock Market
+              </NavLink>
             </li>
             <li>
               <i className="fa-solid fa-angles-right"></i>
-              <a href="#">हवामान</a>
+              <Link
+                to="/Weather"
+                className="nav-item"
+                onClick={(e) => handleCatagory(e.target.innerText)}
+              >
+                Weather
+              </Link>
             </li>
           </ul>
         </div>
@@ -164,7 +215,7 @@ const Footer = () => {
             </li>
             <li>
               <NavLink
-                to="/"
+                to="/contact"
                 className={({ isActive }) =>
                   isActive ? "nav-link nav-link-active" : "nav-link"
                 }
@@ -174,7 +225,7 @@ const Footer = () => {
             </li>
             <li>
               <NavLink
-                to="/"
+                to="/privacy_policy"
                 className={({ isActive }) =>
                   isActive ? "nav-link nav-link-active" : "nav-link"
                 }

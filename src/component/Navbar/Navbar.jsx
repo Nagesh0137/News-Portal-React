@@ -15,35 +15,36 @@ import { ContextStore } from "../../Store/ContextStore";
 
 const Topbar = () => {
   const currentDate = new Date();
-  const formattedDate = `${currentDate.getDate()}/${
-    currentDate.getMonth() + 1
-  }/${currentDate.getFullYear()}`;
+  const formattedDate = currentDate.toLocaleDateString();
+  const formattedDay = `${currentDate.toLocaleDateString("en-us", {
+    weekday: "long",
+  })}`;
 
   return (
     <div className="container-fluid d-none d-lg-block bg-dark">
-      <div className="row align-items-center px-lg-5">
+      <div className="row align-items-center  px-lg-5">
         <div className="col-lg-9">
           <nav className="navbar navbar-expand-sm p-0">
             <ul className="navbar-nav ml-n2">
+              <li className="nav-item border-right border-secondary">
+                <a className="nav-link text-white small" href="#">
+                  {formattedDay}
+                </a>
+              </li>
               <li className="nav-item border-right border-secondary">
                 <a className="nav-link text-white small" href="#">
                   {formattedDate}
                 </a>
               </li>
               <li className="nav-item border-right border-secondary">
-                <a className="nav-link text-white small" href="#">
+                <NavLink to={"/About"} className="nav-link text-white small">
                   About us
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item border-right border-secondary">
-                <a className="nav-link text-white small" href="#">
+                <NavLink to={"/contact"} className="nav-link text-white small">
                   Contact
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-white small" href="#">
-                  Login
-                </a>
+                </NavLink>
               </li>
             </ul>
           </nav>
@@ -81,6 +82,11 @@ const Topbar = () => {
                   <FontAwesomeIcon icon={faYoutube} />
                 </a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link text-white small" href="#">
+                  Login
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -100,12 +106,11 @@ const Topbar = () => {
 
 const MenuBar = () => {
   const { handleCatagory } = useContext(ContextStore);
-  // console.log(catagory);
   return (
-    <div className="container-fluid p-0">
+    <div className="container-fluid  p-0">
       <nav className="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
         <a href="index.html" className="navbar-brand d-block d-lg-none">
-          <h1 className="m-0 display-4 text-uppercase text-primary">
+          <h1 className="m-0 display-4  text-primary">
             News<span className="text-white font-weight-normal">Portal</span>
           </h1>
         </a>

@@ -3,9 +3,9 @@ import Carousel from "react-owl-carousel2";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./HomeStyle.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Articles from "../../Data";
-export default function WebStories({ storySize }) {
+export default function WebStories({ storySize, handleCatagory }) {
   let size = Number(storySize);
   const options = {
     loop: true,
@@ -58,9 +58,13 @@ export default function WebStories({ storySize }) {
                       style={{ objectFit: "cover" }}
                     />
                     <div className="carousel-caption d-md-block m-0 p-0">
-                      <span className="badge bg-success mb-3 p-2 text-white">
+                      <NavLink
+                        to={`/${Articles.category}`}
+                        onClick={(e) => handleCatagory(Articles.category)}
+                        className="badge bg-success mb-3 p-2 text-white"
+                      >
                         {Articles.category}
-                      </span>
+                      </NavLink>
                       <br />
                       <span className="d-flex text-center">
                         <i className="fa-solid fa-calendar-days me-1"></i>
