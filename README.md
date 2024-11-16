@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Link (https://nagesh0137.github.io/News-Portal-React/).
 
 ## Available Scripts
 
